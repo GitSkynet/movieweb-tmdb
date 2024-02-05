@@ -65,6 +65,24 @@ namespace Repositories.TMDBRepo
 				.Take(limit)
 				.ToList();
 		}
+		
+		public List<Movie> GetTopRated(int limit)
+		{
+            return AsQueryable()
+				.Where(x => x.TopRated == true)
+				.OrderByDescending(x => x.Popularity)
+				.Take(limit)
+				.ToList();
+		}
+		
+		public List<Movie> GetComingSoon(int limit)
+		{
+            return AsQueryable()
+				.Where(x => x.Upcoming == true)
+				.OrderByDescending(x => x.Popularity)
+				.Take(limit)
+				.ToList();
+		}
 
 		public List<Movie> GetByGenre(string category, string language, int results, bool adult)
 		{
@@ -85,17 +103,6 @@ namespace Repositories.TMDBRepo
 				query = query.Where(m => m.Adult == adult);
 
 			return query.ToList();
-		}
-
-		public List<Movie> GetUpcoming()
-		{
-			return AsQueryable()
-				.Where(x => x.Upcoming == true)
-					.Include(x => x.Genres)
-					.Include(x => x.SpokenLanguages)
-					.Include(x => x.ProductionCompanies)
-					.Include(x => x.ProductionCountries)
-				.ToList();
 		}
 
 		public List<Movie> GetNowPlaying()
@@ -124,17 +131,6 @@ namespace Repositories.TMDBRepo
 		{
 			return AsQueryable()
 				.Where(x => x.TrendingWeek == true)
-					.Include(x => x.Genres)
-					.Include(x => x.SpokenLanguages)
-					.Include(x => x.ProductionCompanies)
-					.Include(x => x.ProductionCountries)
-				.ToList();
-		}
-		
-		public List<Movie> GetTopRated()
-		{
-			return AsQueryable()
-				.Where(x => x.TopRated == true)
 					.Include(x => x.Genres)
 					.Include(x => x.SpokenLanguages)
 					.Include(x => x.ProductionCompanies)

@@ -63,7 +63,7 @@ namespace Repository.Contracts.TMDB
 		/// Obtiene todas las películas marcadas como Upcoming
 		/// </summary>
 		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Upcoming</returns>
-		List<Movie> GetUpcoming();
+		List<Movie> GetComingSoon(int limit);
 
 		/// <summary>
 		/// Obtiene todas las películas marcadas como Now Playing
@@ -87,6 +87,6 @@ namespace Repository.Contracts.TMDB
 		/// Obtiene todas las películas marcadas como Top Rated
 		/// </summary>
 		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Top Rated</returns>
-		List<Movie> GetTopRated();
+		List<Movie> GetTopRated(int limit);
 	}
 }
