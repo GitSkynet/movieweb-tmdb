@@ -14,13 +14,13 @@ namespace DomainService.Contracts.TMDB
 
 		List<Movie> GetTrendingWeek();
 
-		List<Movie> GetMostPopular(string language, int results);
+		List<Movie> GetMostPopularInTheaters(int limit);
 
-		List<Movie> GetMostRecent(string language, string status, int limit);
+		List<Movie> GetMostRecentInTheaters(int limit);
 
-		List<Movie> GetTopRated(int limit);
+		List<Movie> GetTopRatedInTheaters(int limit);
 
-		List<Movie> GetComingSoon(int limit);
+		List<Movie> GetComingSoonInTheaters(int limit);
 
 		List<Movie> GetByGenre(string category, string language, int results, bool adult);
 

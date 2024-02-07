@@ -20,7 +20,7 @@ namespace PresentationLayer.OpenMovies.Controllers
         [HttpGet]
         public List<Movie> GetAll()
         {
-            List<Movie> moviesFromDB = movieBl.GetMostPopular("es", 15);
+            List<Movie> moviesFromDB = movieBl.GetMostPopularInTheaters(15);
             return moviesFromDB;
         }
     }

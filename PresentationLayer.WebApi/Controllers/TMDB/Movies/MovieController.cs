@@ -17,7 +17,7 @@ namespace WebApi.Controllers.TMDB.Movies
 
 		[HttpGet]
 		[Route("get_all")]
-		public IActionResult GetAll(long movieId)
+		public IActionResult GetAll()
 	        => new ObjectResult(movieBL.GetAll());
 
 		[HttpGet]
@@ -26,24 +26,24 @@ namespace WebApi.Controllers.TMDB.Movies
 			=> new ObjectResult(movieBL.GetById(movieId));
 
 		[HttpGet]
-        [Route("get_most_popular")]
-        public IActionResult GetMostPopular(string language, int results)
-            => new ObjectResult(movieBL.GetMostPopular(language, results));
+        [Route("get_most_popular_intheaters")]
+        public IActionResult GetMostPopularInTheaters(int limit)
+            => new ObjectResult(movieBL.GetMostPopularInTheaters(limit));
 
         [HttpGet]
-        [Route("get_most_recent")]
-        public IActionResult GetMostRecent(string language, string status, int limit)
-            => new ObjectResult(movieBL.GetMostRecent(language, status, limit));
+        [Route("get_most_recent_intheaters")]
+        public IActionResult GetMostRecentInTheaters(int limit)
+            => new ObjectResult(movieBL.GetMostRecentInTheaters(limit));
         
         [HttpGet]
-        [Route("get_top_rated")]
-        public IActionResult GetTopRated(int limit)
-            => new ObjectResult(movieBL.GetTopRated(limit));
+        [Route("get_top_rated_intheaters")]
+        public IActionResult GetTopRatedInTheaters(int limit)
+            => new ObjectResult(movieBL.GetTopRatedInTheaters(limit));
         
         [HttpGet]
-        [Route("get_comingsoon")]
-        public IActionResult GetComingSoon(int limit)
-            => new ObjectResult(movieBL.GetComingSoon(limit));
+        [Route("get_comingsoon_intheaters")]
+        public IActionResult GetComingSoonInTheaters(int limit)
+            => new ObjectResult(movieBL.GetComingSoonInTheaters(limit));
 
         [HttpGet]
         [Route("get_by_category")]

@@ -32,12 +32,11 @@ namespace DomainService.Services.TMDB
 		public List<Movie> GetTrendingDay() => movieDA.GetTrendingDay();
 		public List<Movie> GetTrendingWeek() => movieDA.GetTrendingWeek();
 
-		public List<Movie> GetTopRated(int limit) => movieDA.GetTopRated(limit);
-		public List<Movie> GetComingSoon(int limit) => movieDA.GetComingSoon(limit);
-			 
-		public List<Movie> GetMostPopular(string language, int results) => movieDA.GetMostPopular(language, results);
-		public List<Movie> GetMostRecent(string language, string status, int limit)
-			=> movieDA.GetMostRecent(language, status, limit);
+		// [GET] #INTHEATERS
+		public List<Movie> GetTopRatedInTheaters(int limit) => movieDA.GetTopRatedInTheaters(limit);
+		public List<Movie> GetComingSoonInTheaters(int limit) => movieDA.GetComingSoonInTheaters(limit);
+		public List<Movie> GetMostPopularInTheaters(int limit) => movieDA.GetMostPopularInTheaters(limit);
+		public List<Movie> GetMostRecentInTheaters(int limit) => movieDA.GetMostRecentInTheaters(limit);
 
 		public List<Movie> GetByGenre(string category, string language, int results, bool adult)
 			=> movieDA.GetByGenre(category, language, results, adult);

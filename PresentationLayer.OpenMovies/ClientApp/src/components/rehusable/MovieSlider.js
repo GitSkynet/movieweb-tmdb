@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const MovieSlider = ({ movies }) => {
     const settings = {
         dots: true,
+        arrows: false,
         infinite: false,
         speed: 500,
         slidesToShow: 5,
@@ -60,15 +61,6 @@ const MovieSlider = ({ movies }) => {
                         <p><i className="ion-android-star"></i><span>{(movie.voteAverage).toFixed(1)}</span> /10</p>
 					</div>
 				</div>
-
-
-                //<Card key={movie.id}>
-                //    <CardImg top width="100%" src={`https://image.tmdb.org/t/p/original/${movie.posterPath}`} alt={movie.title} />
-                //    <CardBody>
-                //        <CardTitle>{movie.title}</CardTitle>
-                //        <CardSubtitle>{movie.genre}</CardSubtitle>
-                //    </CardBody>
-                //</Card>
             ))}
         </Slider>
     );

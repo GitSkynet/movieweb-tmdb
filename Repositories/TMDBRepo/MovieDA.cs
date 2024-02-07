@@ -49,24 +49,24 @@ namespace Repositories.TMDBRepo
 			return movie;
 		}
 
-		public List<Movie> GetMostPopular(string language, int results)
+		public List<Movie> GetMostPopularInTheaters(int limit)
 		{
 			return AsQueryable()
 				.OrderByDescending(x => x.Popularity)
-				.Take(results)
+                .ThenBy(m => m.ReleaseDate)
+                .Take(limit)
 				.ToList();
 		}
 
-		public List<Movie> GetMostRecent(string language, string status, int limit)
+		public List<Movie> GetMostRecentInTheaters(int limit)
 		{
 			return AsQueryable()
-				.Where(x => x.Status == status)
 				.OrderByDescending(x => x.ReleaseDate)
 				.Take(limit)
 				.ToList();
 		}
 		
-		public List<Movie> GetTopRated(int limit)
+		public List<Movie> GetTopRatedInTheaters(int limit)
 		{
             return AsQueryable()
 				.Where(x => x.TopRated == true)
@@ -75,7 +75,7 @@ namespace Repositories.TMDBRepo
 				.ToList();
 		}
 		
-		public List<Movie> GetComingSoon(int limit)
+		public List<Movie> GetComingSoonInTheaters(int limit)
 		{
             return AsQueryable()
 				.Where(x => x.Upcoming == true)

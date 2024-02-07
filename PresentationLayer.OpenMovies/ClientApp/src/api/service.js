@@ -8,39 +8,52 @@ class Service {
         });
     };
 
-    // Router [GET] Most popular Movies
-    GetMostPopular = async (id) => {
+    GetInTheatersData = async (limit) => {
         try {
-            const response = await this.service.get(`/movies/get_most_popular?language=es&results=15`);
-            console.log("yeeep")
+            const inTheatersData = {
+                upcoming: await this.GetMostPopular(limit),
+                topRated: await this.GetTopRated(limit),
+                popular: await this.GetMostPopular(limit),
+                mostRecent: await this.GetMostRecent(limit)
+            };
+
+            console.log("inTheatersData:", inTheatersData);
+            return inTheatersData;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetMostPopular = async (limit) => { 
+        try {
+            const response = await this.service.get(`/movies/get_most_popular_intheaters?limit=${limit}`);
             return response.data;
         } catch (error) {
             console.log(error);
         }
     }
 
-    // Router [GET] Most refent Movies
-    GetMostRecent = async (id) => {
+    GetMostRecent = async (limit) => {
         try {
-            const response = await this.service.get(`/movies/get_most_recent?language=es&status=Released&limit=15`);
+            const response = await this.service.get(`/movies/get_most_recent_intheaters?limit=${limit}`);
             return response.data;
         } catch (error) {
             console.log(error);
         }
     }
 
-    GetTopRated = async (id) => {
+    GetTopRated = async (limit) => {
         try {
-            const response = await this.service.get(`/movies/get_top_rated?limit=15`);
+            const response = await this.service.get(`/movies/get_top_rated_intheaters?limit=${limit}`);
             return response.data;
         } catch (error) {
             console.log(error);
         }
     }
 
-    GetComingSoon = async (id) => {
+    GetComingSoon = async (limit) => {
         try {
-            const response = await this.service.get(`/movies/get_comingsoon?limit=15`);
+            const response = await this.service.get(`/movies/get_comingsoon_intheaters?limit=${limit}`);
             return response.data;
         } catch (error) {
             console.log(error);

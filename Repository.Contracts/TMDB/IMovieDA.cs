@@ -35,41 +35,44 @@ namespace Repository.Contracts.TMDB
 		/// <summary>
 		/// Obtiene las películas más populares (actualizado desde TMDB)
 		/// </summary>
-		/// <param name="language">Lenguage a buscar, por defecto; Español</param>
-		/// <param name="results">Límite de resultados a mostrar</param>
+		/// <param name="limit">Límite de resultados a mostrar</param>
 		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con el filtro aplicado</returns>
-		List<Movie> GetMostPopular(string language, int results);
+		List<Movie> GetMostPopularInTheaters(int limit);
 
 		/// <summary>
 		/// Obtiene las últimas películas añadidas recientemente
 		/// </summary>
-		/// <param name="language">Lenguage a buscar, por defecto; Español</param>
-		/// <param name="status">El estado por el que filtrar (Released, In Production, etc)</param>
 		/// <param name="limit">Límite a aplicar para los resultados</param>
 		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con el filtro aplicado</returns>
-		List<Movie> GetMostRecent(string language, string status, int limit);
+		List<Movie> GetMostRecentInTheaters( int limit);
 
-		/// <summary>
-		/// Obtiene las películas filtradas por Género
-		/// </summary>
-		/// <param name="genre">Género por el que buscar</param>
-		/// <param name="language">Lenguage a buscar, por defecto; Español</param>
-		/// <param name="results">Límite a aplicar para los resultados</param>
-		/// <param name="adult">Booleano que especifica el filtro a aplicar</param>
-		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con el filtro aplicado</returns>
-		List<Movie> GetByGenre(string genre, string language, int results, bool adult);
+        /// <summary>
+        /// Obtiene todas las películas marcadas como Upcoming
+        /// </summary>
+        /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Upcoming</returns>
+        List<Movie> GetComingSoonInTheaters(int limit);
 
-		/// <summary>
-		/// Obtiene todas las películas marcadas como Upcoming
-		/// </summary>
-		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Upcoming</returns>
-		List<Movie> GetComingSoon(int limit);
+        /// <summary>
+        /// Obtiene todas las películas marcadas como Top Rated
+        /// </summary>
+        /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Top Rated</returns>
+        List<Movie> GetTopRatedInTheaters(int limit);
 
-		/// <summary>
-		/// Obtiene todas las películas marcadas como Now Playing
-		/// </summary>
-		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Now Playing</returns>
-		List<Movie> GetNowPlaying();
+        /// <summary>
+        /// Obtiene las películas filtradas por Género
+        /// </summary>
+        /// <param name="genre">Género por el que buscar</param>
+        /// <param name="language">Lenguage a buscar, por defecto; Español</param>
+        /// <param name="results">Límite a aplicar para los resultados</param>
+        /// <param name="adult">Booleano que especifica el filtro a aplicar</param>
+        /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con el filtro aplicado</returns>
+        List<Movie> GetByGenre(string genre, string language, int results, bool adult);
+
+        /// <summary>
+        /// Obtiene todas las películas marcadas como Now Playing
+        /// </summary>
+        /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Now Playing</returns>
+        List<Movie> GetNowPlaying();
 
 		/// <summary>
 		/// Obtiene todas las películas marcadas como Trending Day
@@ -82,11 +85,5 @@ namespace Repository.Contracts.TMDB
 		/// </summary>
 		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Trending Week</returns>
 		List<Movie> GetTrendingWeek();
-
-		/// <summary>
-		/// Obtiene todas las películas marcadas como Top Rated
-		/// </summary>
-		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Top Rated</returns>
-		List<Movie> GetTopRated(int limit);
 	}
 }
