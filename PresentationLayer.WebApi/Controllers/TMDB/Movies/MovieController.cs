@@ -47,8 +47,13 @@ namespace WebApi.Controllers.TMDB.Movies
 
         [HttpGet]
         [Route("get_by_category")]
-        public IActionResult GetByGenre(string category, string language, int results, bool adult)
-            => new ObjectResult(movieBL.GetByGenre(category, language, results, adult));
+        public IActionResult GetByGenre(int genreId, int results)
+            => new ObjectResult(movieBL.GetByGenre(genreId, results));
+        
+        [HttpGet]
+        [Route("get_num_movies")]
+        public IActionResult MoviesOnDbCount()
+            => new ObjectResult(movieBL.MoviesOnDbCount());
 
 	}
 }

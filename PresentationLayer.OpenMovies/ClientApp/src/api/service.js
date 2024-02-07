@@ -8,17 +8,40 @@ class Service {
         });
     };
 
+    GetNumOfMovies = async (limit) => {
+        try {
+            const numOfMovies = await this.service.get(`/movies/get_num_movies`);
+            return numOfMovies.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     GetInTheatersData = async (limit) => {
         try {
             const inTheatersData = {
-                upcoming: await this.GetMostPopular(limit),
+                upcoming: await this.GetComingSoon(limit),
                 topRated: await this.GetTopRated(limit),
                 popular: await this.GetMostPopular(limit),
                 mostRecent: await this.GetMostRecent(limit)
             };
-
-            console.log("inTheatersData:", inTheatersData);
             return inTheatersData;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetMostPopularOnData = async (id, results) => {
+        try {
+            const mostPopularMoviesData = {
+                accion: await this.GetByGenreId(44, results),
+                aventura: await this.GetByGenreId(45, results),
+                cienciaFiccion: await this.GetByGenreId(58, results),
+                terror: await this.GetByGenreId(54, results),
+            };
+
+            console.log("mostPopularMoviesData:", mostPopularMoviesData);
+            return mostPopularMoviesData;
         } catch (error) {
             console.log(error);
         }
@@ -54,6 +77,15 @@ class Service {
     GetComingSoon = async (limit) => {
         try {
             const response = await this.service.get(`/movies/get_comingsoon_intheaters?limit=${limit}`);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetByGenreId = async (id, results) => {
+        try {
+            const response = await this.service.get(`/movies/get_by_category?genreId=${id}&results=${results}`);
             return response.data;
         } catch (error) {
             console.log(error);

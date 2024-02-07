@@ -15,31 +15,27 @@ function MultiSectionHome() {
         popular: [],
         mostRecent: []
     });
+
+    // Loader for data
     const [loading, setLoading] = useState(true);
 
+    const fetchData = async () => {
+        try {
+            const inTheaters = await service.GetInTheatersData(15);
+            setInTheatersData(inTheaters);
+
+            const newArrivals = await service.GetInTheatersData(15);
+            setNewArrivalsData(newArrivals);
+
+            setLoading(false);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const inTheaters = await service.GetInTheatersData(15);
-                setInTheatersData(inTheaters);
-
-                const newArrivals = await service.GetInTheatersData(15);
-                //const newArrivals = await service.GetNewArrivalsData();
-                setNewArrivalsData(newArrivals);
-
-                setLoading(false); // Indica que los datos se han cargado correctamente
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                // Puedes manejar el error aquí, por ejemplo, mostrando un mensaje de error al usuario
-            }
-        };
-
         fetchData();
     }, []);
-
-    // Verificar si los datos se están recibiendo correctamente
-    console.log("inTheatersData:", inTheatersData);
-    console.log("newArrivalsData:", newArrivalsData);
 
     return (
         <div className="movie-items full-width">

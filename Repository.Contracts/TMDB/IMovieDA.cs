@@ -61,12 +61,10 @@ namespace Repository.Contracts.TMDB
         /// <summary>
         /// Obtiene las películas filtradas por Género
         /// </summary>
-        /// <param name="genre">Género por el que buscar</param>
-        /// <param name="language">Lenguage a buscar, por defecto; Español</param>
+        /// <param name="genreId">Identificador del género por el que buscar</param>
         /// <param name="results">Límite a aplicar para los resultados</param>
-        /// <param name="adult">Booleano que especifica el filtro a aplicar</param>
         /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con el filtro aplicado</returns>
-        List<Movie> GetByGenre(string genre, string language, int results, bool adult);
+        List<Movie> GetByGenre(int genreId, int results);
 
         /// <summary>
         /// Obtiene todas las películas marcadas como Now Playing
@@ -85,5 +83,11 @@ namespace Repository.Contracts.TMDB
 		/// </summary>
 		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Trending Week</returns>
 		List<Movie> GetTrendingWeek();
+
+        /// <summary>
+        /// Devuelve el número de películas existentes en DB
+        /// </summary>
+        /// <returns>Un <see cref="int"/> con el número de películas existentes en base de datos</returns>
+        int MoviesOnDbCount();
 	}
 }

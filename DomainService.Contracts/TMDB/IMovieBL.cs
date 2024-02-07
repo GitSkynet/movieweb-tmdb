@@ -22,7 +22,12 @@ namespace DomainService.Contracts.TMDB
 
 		List<Movie> GetComingSoonInTheaters(int limit);
 
-		List<Movie> GetByGenre(string category, string language, int results, bool adult);
+		List<Movie> GetByGenre(int genreId, int results);
 
-	}
+        /// <summary>
+        /// Devuelve el número de películas existentes en DB
+        /// </summary>
+        /// <returns>Un <see cref="int"/> con el número de películas existentes en base de datos</returns>
+        int MoviesOnDbCount();
+    }
 }

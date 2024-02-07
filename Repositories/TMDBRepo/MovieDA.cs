@@ -84,25 +84,15 @@ namespace Repositories.TMDBRepo
 				.ToList();
 		}
 
-		public List<Movie> GetByGenre(string category, string language, int results, bool adult)
+		public List<Movie> GetByGenre(int id, int results)
 		{
 			var query = AsQueryable()
-				.Include(x => x.Genres)
-				.Include(x => x.SpokenLanguages)
-				.Include(x => x.ProductionCompanies)
-				.Include(x => x.ProductionCountries)
-				.Where(e => e.Genres.Any(c => c.Name == category));
+                .Where(e => e.Genres.Any(g => g.Id == id))
+				.Take(results)
+				.OrderBy(m => m.TopRated)
+                .ToList();
 
-			if (!string.IsNullOrEmpty(language))
-				query = query.Where(e => e.SpokenLanguages.Any(sl => sl.Name == category));
-
-			if (results != 0)
-				query = query.Take(results);
-
-			if (adult)
-				query = query.Where(m => m.Adult == adult);
-
-			return query.ToList();
+			return query;
 		}
 
 		public List<Movie> GetNowPlaying()
@@ -125,6 +115,11 @@ namespace Repositories.TMDBRepo
 					.Include(x => x.ProductionCompanies)
 					.Include(x => x.ProductionCountries)
 				.ToList();
+		}
+		
+		public int MoviesOnDbCount()
+		{
+			return AsQueryable().Count();
 		}
 		
 		public List<Movie> GetTrendingWeek()

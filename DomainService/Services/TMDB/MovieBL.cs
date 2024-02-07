@@ -37,8 +37,9 @@ namespace DomainService.Services.TMDB
 		public List<Movie> GetComingSoonInTheaters(int limit) => movieDA.GetComingSoonInTheaters(limit);
 		public List<Movie> GetMostPopularInTheaters(int limit) => movieDA.GetMostPopularInTheaters(limit);
 		public List<Movie> GetMostRecentInTheaters(int limit) => movieDA.GetMostRecentInTheaters(limit);
+		public int MoviesOnDbCount() => movieDA.MoviesOnDbCount();
 
-		public List<Movie> GetByGenre(string category, string language, int results, bool adult)
-			=> movieDA.GetByGenre(category, language, results, adult);
+		public List<Movie> GetByGenre(int genreId, int results)
+            => movieDA.GetByGenre(genreId, results);
     }
 }

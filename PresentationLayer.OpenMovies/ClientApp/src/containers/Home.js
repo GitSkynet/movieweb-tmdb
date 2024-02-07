@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react';
 import HeroHome from '../components/sections/HeroHome';
 import MultiSectionHome from '../components/sections/MultiSectionHome';
+import MostPopularOn from '../components/sections/MostPopularOn';
 
 export class Home extends Component {
   static displayName = Home.name;
@@ -16,6 +17,7 @@ export class Home extends Component {
             </div>
         </div>
         <MultiSectionHome />
+        <MostPopularOn />
         </>
     );
   }

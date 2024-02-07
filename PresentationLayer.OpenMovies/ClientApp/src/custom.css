@@ -31,6 +31,19 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
+/* Slick slider CSS*/
+.slick-list {
+    min-height: 200px;
+    width: 100%;
+}
+
+.slick-slide.slick-active.slick-current > div {
+    display: flex;
+    justify-content: center;
+}
+/* END Slick slider CSS*/
+
 @media print {
     *,
     *:before,
@@ -5416,6 +5429,7 @@ ul {
     -moz-appearance: none;
     /* Firefox */
     /*background: url('../images/uploads/drop-icon.png') no-repeat right 20px center;*/
+    background-color: transparent;
     border-left: 1px solid #405266;
     border-right: 1px solid #405266;
     border-top: none;

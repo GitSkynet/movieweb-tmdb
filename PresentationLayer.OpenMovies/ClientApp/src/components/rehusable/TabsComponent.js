@@ -20,7 +20,7 @@ const TabsComponent = ({ items }) => {
                 className={classnames({ active: activeTab === `${item.id}` })}
                 onClick={() => { toggle(`${item.id}`); }}
             >
-                {item.name}
+                # {item.name}
             </NavLink>
         </NavItem>
     ));
