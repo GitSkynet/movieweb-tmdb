@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react';
-import TabsComponent from '../rehusable/TabsComponent';
+import TabsDiscover from '../rehusable/TabsDiscover';
 import service from '../../api/service';
 
 function MultiSectionHome() {
@@ -38,16 +38,16 @@ function MultiSectionHome() {
     }, []);
 
     return (
-        <div className="movie-items full-width">
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="title-hd">
+        <div className="">
+            <div className="">
+                <div className="">
+                    <div className="">
                         <h2>in theaters</h2>
-                        <a href="#" className="viewall">View all <i className="ion-ios-arrow-right"></i></a>
+                        <a href="#" className="">View all <i className=""></i></a>
                     </div>
-                    <div className="tabs">
+                    <div className="">
                         {!loading && (
-                            <TabsComponent items={[
+                            <TabsDiscover items={[
                                 { id: 1, name: "upcoming", movies: inTheatersData.upcoming },
                                 { id: 2, name: "top rated", movies: inTheatersData.topRated },
                                 { id: 3, name: "popular", movies: inTheatersData.popular },
@@ -57,15 +57,15 @@ function MultiSectionHome() {
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="title-hd">
+            <div className="">
+                <div className="">
+                    <div className="">
                         <h2>New arrivals</h2>
-                        <a href="#" className="viewall">View all <i className="ion-ios-arrow-right"></i></a>
+                        <a href="#" className="">View all <i className="ion-ios-arrow-right"></i></a>
                     </div>
-                    <div className="tabs">
+                    <div className="">
                         {!loading && (
-                            <TabsComponent items={[
+                            <TabsDiscover items={[
                                 { id: 1, name: "upcoming", movies: newArrivalsData.upcoming },
                                 { id: 2, name: "top rated", movies: newArrivalsData.topRated },
                                 { id: 3, name: "popular", movies: newArrivalsData.popular },

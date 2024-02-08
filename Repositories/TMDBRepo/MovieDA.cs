@@ -53,7 +53,6 @@ namespace Repositories.TMDBRepo
 		{
 			return AsQueryable()
 				.OrderByDescending(x => x.Popularity)
-                .ThenBy(m => m.ReleaseDate)
                 .Take(limit)
 				.ToList();
 		}

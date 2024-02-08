@@ -31,17 +31,17 @@ class Service {
         }
     }
 
-    GetMostPopularOnData = async (id, results) => {
+    GetDiscoverSectionData = async (results) => {
         try {
-            const mostPopularMoviesData = {
+            const discoverSectionMovies = {
                 accion: await this.GetByGenreId(44, results),
                 aventura: await this.GetByGenreId(45, results),
                 cienciaFiccion: await this.GetByGenreId(58, results),
                 terror: await this.GetByGenreId(54, results),
             };
 
-            console.log("mostPopularMoviesData:", mostPopularMoviesData);
-            return mostPopularMoviesData;
+            console.log("discoverSectionMovies:", discoverSectionMovies);
+            return discoverSectionMovies;
         } catch (error) {
             console.log(error);
         }

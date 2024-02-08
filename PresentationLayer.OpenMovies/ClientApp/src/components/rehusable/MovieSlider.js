@@ -5,60 +5,31 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const MovieSlider = ({ movies }) => {
-    const settings = {
-        dots: true,
-        arrows: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
-
     const moviesToDisplay = movies ?? [];
+
     return (
-        <Slider {...settings}>
-            {moviesToDisplay.map((movie) => (
-                <div className="movie-item" style={{width: "194px"}}>
-				    <div className="mv-img">
-                        <img src={`https://image.tmdb.org/t/p/original/${movie.posterPath}`} alt={movie.title} width="194" height="284" />
-					</div> 
-					<div className="hvr-inner">
-					    <a href="#" tabindex="0">Details<i className="ion-android-arrow-dropright"></i></a>
-					</div>
-					<div className="title-in">
-                        <h6><a href="#" tabindex="0">{movie.title}</a></h6>
-                        <p><i className="ion-android-star"></i><span>{(movie.voteAverage).toFixed(1)}</span> /10</p>
-					</div>
-				</div>
+        <>
+            {movies.map((movie) => (
+                <div class="col-6 col-md-4 col-lg px-2">
+                    <div class="product mt-2">
+                        <div class="product-image mb-1">
+                            <a href="../single-movies/single-movies-v6.html" class="d-inline-block position-relative stretched-link" tabindex="0">
+                                <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
+                                <img class="img-fluid w-100" src={`https://image.tmdb.org/t/p/original/${movie.posterPath}`} alt={movie.title} />
+                            </a>
+                        </div>
+                        <div class="product-meta font-size-12">
+                            <span><a href="../single-movies/single-movies-v6.html" class="h-g-primary" tabindex="0">2020</a></span>
+                            <span><a href="../single-movies/single-movies-v6.html" class="h-g-primary" tabindex="0">Adventures</a></span>
+                            <span><a href="../single-movies/single-movies-v6.html" class="h-g-primary" tabindex="0">History</a></span>
+                        </div>
+                        <div class="font-weight-bold font-size-1">
+                            <a class="text-dark" href="../single-movies/single-movies-v6.html" tabindex="0">{movie.title}</a>
+                        </div>
+                    </div>
+                </div>
             ))}
-        </Slider>
+        </>
     );
 };
 

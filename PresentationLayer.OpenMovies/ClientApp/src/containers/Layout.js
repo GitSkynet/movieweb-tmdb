@@ -9,7 +9,11 @@ export class Layout extends Component {
     return (
       <>
         <NavMenu />
-        {this.props.children}
+            {this.props.children}
+
+            <a class="js-go-to go-to position-fixed animated hs-go-to-prevent-event fadeInUp" href="#content" style={{ right: "15px", bottom: "15px"}}>
+                <i class="fas fa-angle-up"></i>
+            </a>
       </>
     );
   }
