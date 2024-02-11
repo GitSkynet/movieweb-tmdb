@@ -69,25 +69,46 @@ namespace Repository.Contracts.TMDB
         /// <summary>
         /// Obtiene todas las películas marcadas como Now Playing
         /// </summary>
+		/// <param name="limit">Límite de películas a devolverr</param>
         /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Now Playing</returns>
-        List<Movie> GetNowPlaying();
+        List<Movie> GetNowPlaying(int limit);
 
-		/// <summary>
-		/// Obtiene todas las películas marcadas como Trending Day
-		/// </summary>
-		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Trending Day</returns>
-		List<Movie> GetTrendingDay();
+        /// <summary>
+        /// Obtiene todas las películas marcadas como Trending Day
+        /// </summary>
+        /// <param name="limit">Límite de películas a devolverr</param>
+        /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Trending Day</returns>
+        List<Movie> GetTrendingDay(int limit);
 
-		/// <summary>
-		/// Obtiene todas las películas marcadas como Trending Week
-		/// </summary>
-		/// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Trending Week</returns>
-		List<Movie> GetTrendingWeek();
+        /// <summary>
+        /// Obtiene todas las películas marcadas como Trending Week
+        /// </summary>
+        /// <param name="limit">Límite de películas a devolverr</param>
+        /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con las películas marcadas como Trending Week</returns>
+        List<Movie> GetTrendingWeek(int limit);
 
         /// <summary>
         /// Devuelve el número de películas existentes en DB
         /// </summary>
         /// <returns>Un <see cref="int"/> con el número de películas existentes en base de datos</returns>
         int MoviesOnDbCount();
-	}
+
+        /// <summary>
+        /// Obtiene las películas añadidas hoy
+        /// </summary>
+        /// <returns>Un <see cref="int"/> con el número de películas añadidas hoy en base de datos</returns>
+        List<Movie> GetToday(int limit);
+
+        /// <summary>
+        /// Obtiene las películas añadidas esta semana
+        /// </summary>
+        /// <returns>Un <see cref="int"/> con el número de películas añadidas esta semana en base de datos</returns>
+        List<Movie> GetThisWeek(int limit);
+
+        /// <summary>
+        /// Obtiene las películas añadidas el último mes
+        /// </summary>
+        /// <returns>Un <see cref="int"/> con el número de películas añadidas el último mes en base de datos</returns>
+        List<Movie> GetLast30days(int limit);
+    }
 }

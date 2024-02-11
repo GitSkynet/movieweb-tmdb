@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import { Layout } from './containers/Layout';
 import './assets/css/theme.css';
-//import './assets/css/all.min.css';
+import './assets/css/masvideos.css';
+import './assets/css/style.min.css';
 
 export default class App extends Component {
   static displayName = App.name;

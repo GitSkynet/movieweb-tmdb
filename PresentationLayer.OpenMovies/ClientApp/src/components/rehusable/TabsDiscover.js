@@ -15,12 +15,12 @@ const TabsComponent = ({ items }) => {
     };
 
     const navItems = items.map((item) => (
-        <NavItem key={item.id} className={`nav-item flex-shrink-0 flex-shrink-md-1`}>
+        <NavItem key={item.id} className={`nav-item flex-shrink-0 flex-shrink-md-0`}>
             <NavLink
                 className={`nav-link ${activeTab === `${item.id}` ? 'active pl-2' : ''}`}
                 onClick={() => { toggle(`${item.id}`); }}
             >
-            {item.name}
+                {item.niceName}
             </NavLink>
         </NavItem>
     ));
@@ -35,12 +35,12 @@ const TabsComponent = ({ items }) => {
 
     return (
         <>
-            <div className="tab-nav__v3 mb-3">
-                <ul className="nav flex-nowrap flex-lg-wrap justify-content-start overflow-auto align-items-center" role="tablist">
+            <div className="tab-nav__v2">
+                <ul className="nav flex-nowrap flex-md-wrap justify-content-start overflow-auto align-items-center" role="tablist">
                     {navItems}
                 </ul>
             </div>
-            <div className="tab-content u-slick__tab">
+            <div className="tab-content">
                 <TabContent activeTab={activeTab}>
                     {tabPanes}
                 </TabContent>

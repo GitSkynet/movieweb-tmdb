@@ -12,7 +12,6 @@ function MostPopularSection() {
     const fetchData = async () => {
         try {
             const movies = await service.GetMostPopular(23);
-            console.log("movies:", movies);
             setfirstFiveMovies(movies.slice(0, 5));
             setnextSixMovies(movies.slice(5, 11));
             setremainingMovies(movies.slice(11));
@@ -43,8 +42,8 @@ function MostPopularSection() {
                     </div>
                     <div className="col">
                         <div className="row row-cols-2 row-cols-md-5">
-                            {firstFiveMovies?.map((movie, index) => (
-                                <div key={index} className="col mb-5 mb-xl-0">
+                            {firstFiveMovies?.map((movie) => (
+                                <div key={movie.id} className="col mb-5 mb-xl-0">
                                     <div className="product">
                                         <div className="product-image mb-2">
                                             <a href="../single-movies/single-movies-v2.html" className="d-inline-block position-relative stretched-link">
@@ -66,7 +65,7 @@ function MostPopularSection() {
                 </div>
                 <div className="row row-cols-md-5 row-cols-xl">
                     {nextSixMovies?.map((movie, index) => (
-                        <div className="col-6 col-xl mb-5 mb-xl-0">
+                        <div key={movie.id} className="col-6 col-xl mb-5 mb-xl-0">
                             <div className="product">
                                 <div className="product-image mb-2">
                                     <a href="#" className="d-inline-block position-relative stretched-link">

@@ -34,15 +34,28 @@ class Service {
     GetDiscoverSectionData = async (results) => {
         try {
             const discoverSectionMovies = {
-                accion: await this.GetByGenreId(44, results),
-                aventura: await this.GetByGenreId(45, results),
-                cienciaFiccion: await this.GetByGenreId(58, results),
-                terror: await this.GetByGenreId(54, results),
+                accion: await this.GetByGenreId(1, results),
+                aventura: await this.GetByGenreId(8, results),
+                cienciaFiccion: await this.GetByGenreId(4, results),
+                terror: await this.GetByGenreId(13, results),
             };
-
-            console.log("discoverSectionMovies:", discoverSectionMovies);
             return discoverSectionMovies;
         } catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetHotSectionData = async (limit) => {
+        try {
+            const hotSectionData = {
+                today: await this.GetToday(limit),
+                thisWeek: await this.GetThisWeek(limit),
+                last30Days: await this.GetLast30days(limit),
+            };
+            console.log("SERVICE HOTSECTION:", hotSectionData);
+            return hotSectionData;
+        }
+        catch (error) {
             console.log(error);
         }
     }
@@ -92,6 +105,32 @@ class Service {
         }
     }
 
+    GetToday = async (limit) => {
+        try {
+            const response = await this.service.get(`/movies/get_today?limit=${limit}`);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetThisWeek = async (limit) => {
+        try {
+            const response = await this.service.get(`/movies/get_this_week?limit=${limit}`);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetLast30days = async (limit) => {
+        try {
+            const response = await this.service.get(`/movies/get_last_30_days?limit=${limit}`);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 const defaultRequestFunctions = new Service();

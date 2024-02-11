@@ -1,8 +1,9 @@
 ﻿import React, { Component } from 'react';
 import HeroHome from '../components/sections/HeroHome';
-import MultiSectionHome from '../components/sections/MultiSectionHome';
+import HotMoviesSection from '../components/sections/HotMoviesSection';
 import MostPopularSection from '../components/sections/MostPopularSection';
 import DiscoverSection from '../components/sections/DiscoverSection';
+import MultiSectionHome from '../components/sections/MultiSectionHome';
 
 export class Home extends Component {
   static displayName = Home.name;
@@ -13,7 +14,8 @@ export class Home extends Component {
             <HeroHome/>
             <MostPopularSection />
             <DiscoverSection/>
-            {/*<MultiSectionHome />*/}
+            <HotMoviesSection />
+            <MultiSectionHome />
         </main>
     );
   }

@@ -50,10 +50,10 @@ const MostPopularSlider = ({ movies }) => {
                         <img src={`https://image.tmdb.org/t/p/original/${movie.posterPath}`} alt={movie.title} width="194" height="284" />
                     </div>
                     <div className="hvr-inner">
-                        <a href="#" tabindex="0">Details<i className="ion-android-arrow-dropright"></i></a>
+                        <a href="#">Details<i className="ion-android-arrow-dropright"></i></a>
                     </div>
                     <div className="title-in">
-                        <h6><a href="#" tabindex="0">{movie.title}</a></h6>
+                        <h6><a href="#">{movie.title}</a></h6>
                         <p><i className="ion-android-star"></i><span>{(movie.voteAverage).toFixed(1)}</span> /10</p>
                     </div>
                 </div>

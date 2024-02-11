@@ -8,11 +8,11 @@ namespace DomainService.Contracts.TMDB
 
 		Movie GetById(long movieId);
 
-		List<Movie> GetNowPlaying();
+		List<Movie> GetNowPlaying(int limit);
 
-		List<Movie> GetTrendingDay();
+		List<Movie> GetTrendingDay(int limit);
 
-		List<Movie> GetTrendingWeek();
+		List<Movie> GetTrendingWeek(int limit);
 
 		List<Movie> GetMostPopularInTheaters(int limit);
 
@@ -23,6 +23,12 @@ namespace DomainService.Contracts.TMDB
 		List<Movie> GetComingSoonInTheaters(int limit);
 
 		List<Movie> GetByGenre(int genreId, int results);
+
+		List<Movie> GetToday(int limit);
+
+		List<Movie> GetThisWeek(int limit);
+
+		List<Movie> GetLast30days(int limit);
 
         /// <summary>
         /// Devuelve el número de películas existentes en DB

@@ -16,7 +16,7 @@ function HeroHome(args) {
                                         <div className="watch-now-btn d-inline-block rounded-circle py-5 px-5 mb-2 pb-1 mx-1" style={{ background: 'linear-gradient(30deg, #2a4999 0 %, #2c9cd4 100 %)' }}>
                                             <div className="d-flex justify-content-center ml-1">
                                                 <svg xmlns="http://www.w3.org/2000/svg" link="http://www.w3.org/1999/xlink" width="49px" height="54px">
-                                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M2.000,51.000 C-0.150,46.056 0.424,8.178 2.000,5.000 C3.282,2.414 5.732,0.351 9.000,1.000 C19.348,3.054 45.393,19.419 48.000,25.000 C49.019,27.182 48.794,28.758 48.000,31.000 C46.967,33.919 13.512,54.257 9.000,54.000 C6.740,53.873 3.005,53.311 2.000,51.000 Z"></path>
+                                                    <path fill="rgb(255, 255, 255)" d="M2.000,51.000 C-0.150,46.056 0.424,8.178 2.000,5.000 C3.282,2.414 5.732,0.351 9.000,1.000 C19.348,3.054 45.393,19.419 48.000,25.000 C49.019,27.182 48.794,28.758 48.000,31.000 C46.967,33.919 13.512,54.257 9.000,54.000 C6.740,53.873 3.005,53.311 2.000,51.000 Z"></path>
                                                 </svg>
                                             </div>
                                         </div>
@@ -40,10 +40,10 @@ function HeroHome(args) {
                                 </div>
                                 <div className="movie__actions d-xl-none">
                                     <div className="pb-1 mr-xl-3">
-                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-primary py-3 w-100 btn-sm mb-3" tabindex="0">WATCH NOW</a>
+                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-primary py-3 w-100 btn-sm mb-3">WATCH NOW</a>
                                     </div>
                                     <div>
-                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-outline-light py-3 w-100 btn-sm" tabindex="0">+ PLAYLIST</a>
+                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-outline-light py-3 w-100 btn-sm">+ PLAYLIST</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ function HeroHome(args) {
                                         <div className="watch-now-btn d-inline-block rounded-circle py-5 px-5 mb-2 pb-1 mx-1" style={{ background: 'linear-gradient(30deg, #2a4999 0 %, #2c9cd4 100 %)' }}>
                                             <div className="d-flex justify-content-center ml-1">
                                                 <svg xmlns="http://www.w3.org/2000/svg" link="http://www.w3.org/1999/xlink" width="49px" height="54px">
-                                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M2.000,51.000 C-0.150,46.056 0.424,8.178 2.000,5.000 C3.282,2.414 5.732,0.351 9.000,1.000 C19.348,3.054 45.393,19.419 48.000,25.000 C49.019,27.182 48.794,28.758 48.000,31.000 C46.967,33.919 13.512,54.257 9.000,54.000 C6.740,53.873 3.005,53.311 2.000,51.000 Z"></path>
+                                                    <path fill="rgb(255, 255, 255)" d="M2.000,51.000 C-0.150,46.056 0.424,8.178 2.000,5.000 C3.282,2.414 5.732,0.351 9.000,1.000 C19.348,3.054 45.393,19.419 48.000,25.000 C49.019,27.182 48.794,28.758 48.000,31.000 C46.967,33.919 13.512,54.257 9.000,54.000 C6.740,53.873 3.005,53.311 2.000,51.000 Z"></path>
                                                 </svg>
                                             </div>
                                         </div>
@@ -85,10 +85,10 @@ function HeroHome(args) {
                                 </div>
                                 <div className="movie__actions d-xl-none">
                                     <div className="pb-1 mr-xl-3">
-                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-primary py-3 w-100 btn-sm mb-3" tabindex="0">WATCH NOW</a>
+                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-primary py-3 w-100 btn-sm mb-3">WATCH NOW</a>
                                     </div>
                                     <div>
-                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-outline-light py-3 w-100 btn-sm" tabindex="0">+ PLAYLIST</a>
+                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-outline-light py-3 w-100 btn-sm">+ PLAYLIST</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ function HeroHome(args) {
                                         <div className="watch-now-btn d-inline-block rounded-circle py-5 px-5 mb-2 pb-1 mx-1" style={{ background: 'linear-gradient(30deg, #2a4999 0 %, #2c9cd4 100 %)' }}>
                                             <div className="d-flex justify-content-center ml-1">
                                                 <svg xmlns="http://www.w3.org/2000/svg" link="http://www.w3.org/1999/xlink" width="49px" height="54px">
-                                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M2.000,51.000 C-0.150,46.056 0.424,8.178 2.000,5.000 C3.282,2.414 5.732,0.351 9.000,1.000 C19.348,3.054 45.393,19.419 48.000,25.000 C49.019,27.182 48.794,28.758 48.000,31.000 C46.967,33.919 13.512,54.257 9.000,54.000 C6.740,53.873 3.005,53.311 2.000,51.000 Z"></path>
+                                                    <path fill="rgb(255, 255, 255)" d="M2.000,51.000 C-0.150,46.056 0.424,8.178 2.000,5.000 C3.282,2.414 5.732,0.351 9.000,1.000 C19.348,3.054 45.393,19.419 48.000,25.000 C49.019,27.182 48.794,28.758 48.000,31.000 C46.967,33.919 13.512,54.257 9.000,54.000 C6.740,53.873 3.005,53.311 2.000,51.000 Z"></path>
                                                 </svg>
                                             </div>
                                         </div>
@@ -130,10 +130,10 @@ function HeroHome(args) {
                                 </div>
                                 <div className="movie__actions d-xl-none">
                                     <div className="pb-1 mr-xl-3">
-                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-primary py-3 w-100 btn-sm mb-3" tabindex="0">WATCH NOW</a>
+                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-primary py-3 w-100 btn-sm mb-3">WATCH NOW</a>
                                     </div>
                                     <div>
-                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-outline-light py-3 w-100 btn-sm" tabindex="0">+ PLAYLIST</a>
+                                        <a href="../single-movies/single-movies-v4.html" className="btn px-5 btn-outline-light py-3 w-100 btn-sm">+ PLAYLIST</a>
                                     </div>
                                 </div>
                             </div>

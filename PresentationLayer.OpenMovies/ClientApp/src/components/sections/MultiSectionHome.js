@@ -38,13 +38,15 @@ function MultiSectionHome() {
     }, []);
 
     return (
-        <div className="">
+        <div className="home-section section-movies-carousel-aside-header has-section-header">
             <div className="">
-                <div className="">
-                    <div className="">
-                        <h2>in theaters</h2>
-                        <a href="#" className="">View all <i className=""></i></a>
-                    </div>
+                <ul className="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#">Comedy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Drama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Musical</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Romance</a></li>
+                </ul>
+                <div className="section-movies-carousel-aside-header__inner">
                     <div className="">
                         {!loading && (
                             <TabsDiscover items={[
@@ -52,24 +54,6 @@ function MultiSectionHome() {
                                 { id: 2, name: "top rated", movies: inTheatersData.topRated },
                                 { id: 3, name: "popular", movies: inTheatersData.popular },
                                 { id: 4, name: "most recent", movies: inTheatersData.mostRecent }
-                            ]} />
-                        )}
-                    </div>
-                </div>
-            </div>
-            <div className="">
-                <div className="">
-                    <div className="">
-                        <h2>New arrivals</h2>
-                        <a href="#" className="">View all <i className="ion-ios-arrow-right"></i></a>
-                    </div>
-                    <div className="">
-                        {!loading && (
-                            <TabsDiscover items={[
-                                { id: 1, name: "upcoming", movies: newArrivalsData.upcoming },
-                                { id: 2, name: "top rated", movies: newArrivalsData.topRated },
-                                { id: 3, name: "popular", movies: newArrivalsData.popular },
-                                { id: 4, name: "most recent", movies: newArrivalsData.mostRecent }
                             ]} />
                         )}
                     </div>

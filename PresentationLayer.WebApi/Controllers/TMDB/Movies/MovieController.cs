@@ -1,6 +1,7 @@
 ﻿using DomainService.Contracts.TMDB;
 using Entities.TMDB.Movies;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace WebApi.Controllers.TMDB.Movies
 {
@@ -54,6 +55,24 @@ namespace WebApi.Controllers.TMDB.Movies
         [Route("get_num_movies")]
         public IActionResult MoviesOnDbCount()
             => new ObjectResult(movieBL.MoviesOnDbCount());
+
+
+        [HttpGet]
+        [Route("get_today")]
+        public IActionResult GetToday(int limit)
+            => new ObjectResult(movieBL.GetToday(limit));
+        
+        [HttpGet]
+        [Route("get_this_week")]
+        public IActionResult GetThisWeek(int limit)
+            => new ObjectResult(movieBL.GetThisWeek(limit));
+        
+        [HttpGet]
+        [Route("get_last_30_days")]
+        public IActionResult GetLast30days(int limit)
+            => new ObjectResult(movieBL.GetLast30days(limit));
+
+
 
 	}
 }

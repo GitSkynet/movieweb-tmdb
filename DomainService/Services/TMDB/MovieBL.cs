@@ -3,6 +3,7 @@ using DomainService.Contracts.TMDB;
 using DomainService.Services.BaseBL;
 using Entities.TMDB.Movies;
 using Repository.Contracts.TMDB;
+using System.Collections.Generic;
 
 namespace DomainService.Services.TMDB
 {
@@ -28,9 +29,9 @@ namespace DomainService.Services.TMDB
 		
 		public override Movie GetById(long movieId) => movieDA.GetById(movieId);
 
-		public List<Movie> GetNowPlaying() => movieDA.GetNowPlaying();
-		public List<Movie> GetTrendingDay() => movieDA.GetTrendingDay();
-		public List<Movie> GetTrendingWeek() => movieDA.GetTrendingWeek();
+		public List<Movie> GetNowPlaying(int limit) => movieDA.GetNowPlaying(limit);
+		public List<Movie> GetTrendingDay(int limit) => movieDA.GetTrendingDay(limit);
+		public List<Movie> GetTrendingWeek(int limit) => movieDA.GetTrendingWeek(limit);
 
 		// [GET] #INTHEATERS
 		public List<Movie> GetTopRatedInTheaters(int limit) => movieDA.GetTopRatedInTheaters(limit);
@@ -39,7 +40,11 @@ namespace DomainService.Services.TMDB
 		public List<Movie> GetMostRecentInTheaters(int limit) => movieDA.GetMostRecentInTheaters(limit);
 		public int MoviesOnDbCount() => movieDA.MoviesOnDbCount();
 
-		public List<Movie> GetByGenre(int genreId, int results)
+		public List<Movie> GetToday(int limit) => movieDA.GetToday(limit);
+		public List<Movie> GetThisWeek(int limit) => movieDA.GetThisWeek(limit);
+        public List<Movie> GetLast30days(int limit) => movieDA.GetLast30days(limit);
+        
+        public List<Movie> GetByGenre(int genreId, int results)
             => movieDA.GetByGenre(genreId, results);
     }
 }
