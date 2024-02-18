@@ -10,7 +10,6 @@ function HotMoviesSection() {
     const fetchData = async () => {
         try {
             const movies = await service.GetHotSectionData(4);
-            console.log("movies:", movies);
             setMovies(movies);
             setLoading(false);
         } catch (error) {
@@ -24,7 +23,7 @@ function HotMoviesSection() {
 
     return (
         <section className="home-section section-hot-premier-show">
-            <div className="container px-md-6">
+            <div className="container px-sm-10 px-md-7 px-lg-8">
                 <div className="home-section__inner">
                     {!loading && (
                         <TabsHotSection items={[

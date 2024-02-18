@@ -90,14 +90,29 @@ namespace Repositories.TMDBRepo
 		{
 			var query = AsQueryable()
                 .Where(e => e.Genres.Any(g => g.Id == id))
-				.Take(results)
-				.OrderByDescending(m => m.TopRated)
+                .OrderByDescending(m => m.Popularity)
+                .Take(results)
                 .ToList();
 
 			return query;
 		}
 
-		public List<Movie> GetNowPlaying(int limit)
+        public List<Movie> GetHeroHome()
+        {
+			var query = AsQueryable()
+				.Include(m => m.Genres)
+				.Where(m => m.TopRated == true)
+				.OrderByDescending(m => m.VoteAverage)
+				.Take(10)
+				.ToList();
+            var random = new Random();
+            var randomMovies = query.OrderBy(x => random.Next())
+				.Take(3)
+				.ToList();
+            return randomMovies;
+        }
+
+        public List<Movie> GetNowPlaying(int limit)
 		{
 			return AsQueryable()
 				.Where(x => x.NowPlaying == true)

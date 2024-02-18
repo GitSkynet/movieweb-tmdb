@@ -71,8 +71,10 @@ namespace WebApi.Controllers.TMDB.Movies
         [Route("get_last_30_days")]
         public IActionResult GetLast30days(int limit)
             => new ObjectResult(movieBL.GetLast30days(limit));
-
-
-
+        
+        [HttpGet]
+        [Route("get_herohome")]
+        public IActionResult GetHeroHome()
+            => new ObjectResult(movieBL.GetHeroHome());
 	}
 }

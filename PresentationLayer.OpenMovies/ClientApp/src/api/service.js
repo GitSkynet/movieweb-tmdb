@@ -17,6 +17,15 @@ class Service {
         }
     }
 
+    GetHeroHomeData = async () => {
+        try {
+            const response = await this.service.get(`/movies/get_herohome`);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     GetInTheatersData = async (limit) => {
         try {
             const inTheatersData = {
@@ -52,8 +61,38 @@ class Service {
                 thisWeek: await this.GetThisWeek(limit),
                 last30Days: await this.GetLast30days(limit),
             };
-            console.log("SERVICE HOTSECTION:", hotSectionData);
             return hotSectionData;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetRomanticMovies = async (limit) => {
+        try {
+            const romanticMovies = {
+                comedia: await this.GetByGenreId(5, limit),
+                drama: await this.GetByGenreId(3, limit),
+                musical: await this.GetByGenreId(14, limit),
+                romance: await this.GetByGenreId(11, limit),
+            };
+            return romanticMovies;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+    GetActionMovies = async (limit) => {
+        try {
+            const actionMovies = {
+                accion: await this.GetByGenreId(1, limit),
+                cienciaFiccion: await this.GetByGenreId(4, limit),
+                aventura: await this.GetByGenreId(8, limit),
+                suspense: await this.GetByGenreId(2, limit),
+            };
+            console.log("SERVICE actionMovies:", actionMovies);
+            return actionMovies;
         }
         catch (error) {
             console.log(error);

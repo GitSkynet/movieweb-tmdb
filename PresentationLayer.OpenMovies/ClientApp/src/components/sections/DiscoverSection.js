@@ -2,7 +2,6 @@
 import TabsDiscover from '../rehusable/TabsDiscover';
 import service from '../../api/service';
 
-
 function DiscoverSection(args) {
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState();
@@ -10,6 +9,7 @@ function DiscoverSection(args) {
     const fetchData = async () => {
         try {
             const movies = await service.GetDiscoverSectionData(8);
+            console.log("DISCOVERMOVIES:", movies)
             setMovies(movies);
             setLoading(false);
         } catch (error) {

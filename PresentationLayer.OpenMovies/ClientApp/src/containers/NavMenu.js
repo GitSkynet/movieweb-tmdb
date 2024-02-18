@@ -1,46 +1,45 @@
-import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+const NavMenu = () => {
+    const [isOpen, setIsOpen] = React.useState(false);
 
-  constructor (props) {
-    super(props);
+    const toggleNavbar = () => setIsOpen(!isOpen);
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
-
-  toggleNavbar () {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  render() {
     return (
-      <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white box-shadow mb-3" container light>
-          <NavbarBrand tag={Link} to="/">OpenMovies</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-            <ul className="navbar-nav flex-grow">
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-              </NavItem>
-            </ul>
-          </Collapse>
+        <Navbar color="light" light expand="md">
+            <div className="container-fluid">
+                <NavbarBrand href="/">Mi Sitio</NavbarBrand>
+                <NavbarToggler onClick={toggleNavbar}>
+                    <FontAwesomeIcon
+                        icon={faBars}
+                        style={{
+                            transition: 'transform 0.3s ease',
+                            transform: isOpen ? 'rotate(90deg)' : 'none'
+                        }}
+                    />
+                </NavbarToggler>
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem>
+                            <NavLink href="/inicio">Inicio</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/acerca">Acerca</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/servicios">Servicios</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/contacto">Contacto</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+            </div>
         </Navbar>
-      </header>
     );
-  }
 }
+
+export default NavMenu;

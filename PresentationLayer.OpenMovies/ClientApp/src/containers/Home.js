@@ -8,14 +8,15 @@ import MultiSectionHome from '../components/sections/MultiSectionHome';
 export class Home extends Component {
   static displayName = Home.name;
 
+
   render() {
     return (
         <main id="content">
-            <HeroHome/>
+            <HeroHome />
             <MostPopularSection />
-            <DiscoverSection/>
+            <DiscoverSection />
             <HotMoviesSection />
-            <MultiSectionHome />
+            <MultiSectionHome />        
         </main>
     );
   }

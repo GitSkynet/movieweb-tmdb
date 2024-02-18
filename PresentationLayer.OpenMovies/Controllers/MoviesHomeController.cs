@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PresentationLayer.OpenMovies.Controllers
 {
-    [Route("[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class MoviesHomeController : ControllerBase
     {
         private readonly IMovieBL movieBl;
@@ -18,7 +18,7 @@ namespace PresentationLayer.OpenMovies.Controllers
         }
 
         [HttpGet]
-        public List<Movie> GetAll()
+        public List<Movie> Get()
         {
             List<Movie> moviesFromDB = movieBl.GetMostPopularInTheaters(15);
             return moviesFromDB;

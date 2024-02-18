@@ -1,9 +1,11 @@
 ﻿using DataAccess.RESTServices.TheMovieDB.Interfaces;
 using DomainService.Contracts.TMDB;
 using DomainService.Services.BaseBL;
+using DtoService.TMDB;
 using Entities.TMDB.Movies;
 using Repository.Contracts.TMDB;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace DomainService.Services.TMDB
 {
@@ -46,5 +48,33 @@ namespace DomainService.Services.TMDB
         
         public List<Movie> GetByGenre(int genreId, int results)
             => movieDA.GetByGenre(genreId, results);
+		
+		public List<MovieHeroHomeDTO> GetHeroHome()
+		{
+			List<MovieHeroHomeDTO> moviesDTO = new();
+            var movies = movieDA.GetHeroHome();
+
+            foreach (var movie in movies)
+            {
+                var movieDTO = new MovieHeroHomeDTO
+                {
+                    Id = movie.Id,
+                    Title = movie.Title,
+                    PosterPath = movie.PosterPath,
+					Runtime = movie.Runtime,
+                    TagLine = movie.Tagline,
+                    Genres = movie.Genres.Select(g => new GenreHeroHomeDTO 
+					{
+						Id = g.Id,
+						Name = g.Name,
+					})
+					.ToList()
+                };
+
+                moviesDTO.Add(movieDTO);
+            }
+
+            return moviesDTO;
+        }
     }
 }

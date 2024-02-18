@@ -1,11 +1,12 @@
 ﻿@charset "UTF-8";
 
-/* VODI theme CSS Styles */
-/* Copyright 2024 Curtido Enterprises */
+/* Theme base CSS Styles */
 /*!* Bootstrap v4.4.1 (https://getbootstrap.com/)
 * Copyright 2011-2019 The Bootstrap Authors
 * Copyright 2011-2019 Twitter, Inc.
-* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/ :root {
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/ 
+
+:root {
     --blue: #377dff;
     --indigo: #2d1582;
     --purple: #6f42c1;
@@ -40,9 +41,7 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box
 }
 
@@ -87,12 +86,7 @@ hr {
     overflow: visible
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: .5rem
 }
@@ -102,8 +96,7 @@ p {
     margin-bottom: 1rem
 }
 
-abbr[title],
-abbr[data-original-title] {
+abbr[title], abbr[data-original-title] {
     text-decoration: underline;
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
@@ -119,19 +112,14 @@ address {
     line-height: inherit
 }
 
-ol,
-ul,
-dl {
+ol, ul, dl {
     margin-top: 0;
     margin-bottom: 1rem
 }
 
-    ol ol,
-    ul ul,
-    ol ul,
-    ul ol {
-        margin-bottom: 0
-    }
+ol ol, ul ul, ol ul, ul ol {
+    margin-bottom: 0
+}
 
 dt {
     font-weight: 700
@@ -146,8 +134,7 @@ blockquote {
     margin: 0 0 1rem
 }
 
-b,
-strong {
+b, strong {
     font-weight: bolder
 }
 
@@ -155,8 +142,7 @@ small {
     font-size: 80%
 }
 
-sub,
-sup {
+sub, sup {
     position: relative;
     font-size: 75%;
     line-height: 0;

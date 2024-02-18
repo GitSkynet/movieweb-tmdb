@@ -66,6 +66,8 @@ namespace Repository.Contracts.TMDB
         /// <returns>Una <see cref="List{T}"/> de <see cref="Movie"/> con el filtro aplicado</returns>
         List<Movie> GetByGenre(int genreId, int results);
 
+        List<Movie> GetHeroHome();
+
         /// <summary>
         /// Obtiene todas las películas marcadas como Now Playing
         /// </summary>

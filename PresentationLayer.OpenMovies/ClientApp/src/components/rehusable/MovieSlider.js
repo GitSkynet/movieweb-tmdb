@@ -15,7 +15,7 @@ const MovieSlider = ({ movies }) => {
                         <div className="product-image mb-1">
                             <a href="../single-movies/single-movies-v6.html" className="d-inline-block position-relative stretched-link">
                                 <span className="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                                <img className="img-fluid w-100" src={`https://image.tmdb.org/t/p/original/${movie.posterPath}`} alt={movie.title} />
+                                <img className="img-fluid" src={`https://image.tmdb.org/t/p/original/${movie.posterPath}`} style={{width: "180px", height: "240px"}} alt={movie.title} />
                             </a>
                         </div>
                         <div className="product-meta font-size-12">

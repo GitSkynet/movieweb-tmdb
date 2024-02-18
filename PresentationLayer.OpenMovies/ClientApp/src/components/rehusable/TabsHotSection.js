@@ -30,7 +30,7 @@ const TabsHotSection = ({ items }) => {
             <div className="movies columns-4">
                 <div className="movies__inner">
                     {item.movies.map((movie) => (
-                        <div className="movie">
+                        <div key={movie.id} className="movie">
                             <div className="movie__poster">
                                 <a href="#" className="masvideos-LoopMovie-link masvideos-loop-movie__link movie__link">
                                     <img loading="lazy" decoding="async" width="600" height="900" src={`https://image.tmdb.org/t/p/original/${movie.posterPath}`} className="movie__poster--image" alt=""/>

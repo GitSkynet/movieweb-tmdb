@@ -1,4 +1,5 @@
-﻿using Entities.TMDB.Movies;
+﻿using DtoService.TMDB;
+using Entities.TMDB.Movies;
 
 namespace DomainService.Contracts.TMDB
 {
@@ -29,6 +30,8 @@ namespace DomainService.Contracts.TMDB
 		List<Movie> GetThisWeek(int limit);
 
 		List<Movie> GetLast30days(int limit);
+
+		List<MovieHeroHomeDTO> GetHeroHome();
 
         /// <summary>
         /// Devuelve el número de películas existentes en DB

@@ -5,6 +5,7 @@ import { Layout } from './containers/Layout';
 import './assets/css/theme.css';
 import './assets/css/masvideos.css';
 import './assets/css/style.min.css';
+import './assets/css/carouselaside.style.min.css';
 
 export default class App extends Component {
   static displayName = App.name;
